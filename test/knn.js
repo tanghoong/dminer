@@ -21,16 +21,16 @@ knn.addDocument(1, [11, 12, 13])
 
 // test perfect match (expected: [1])
 labels = knn.classify([11, 12, 16], 5);
-console.log(labels);
+console.log(labels, [1]);
 
 // test two matches (expected: [1, 2])
 labels = knn.classify([11, 21, 36], 5);
-console.log(labels);
+console.log(labels, [1, 2]);
 
 // test three matches (expected: [1, 2, 3])
 labels = knn.classify([11, 21, 31], 9);
-console.log(labels);
+console.log(labels, [1, 2, 3]);
 
 // test no matches (expected: [])
 labels = knn.classify([41, 42, 43], 5);
-console.log(labels);
+console.log(labels, []);
