@@ -26,6 +26,7 @@ expected = [
 
 // test Jarvis-Patrick clustering
 describe('jarpat', function () {
+
     it('should return the expected clusters', function ()  {
         clusters = jarpat.clusters(dataset, 2, 1);
         assert.deepEqual(expected, clusters);
