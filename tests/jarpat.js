@@ -1,3 +1,4 @@
+/*global describe, it */
 /*jslint node: true */
 
 var assert, jarpat, dataset, expected, clusters;
@@ -26,8 +27,9 @@ expected = [
 
 // test Jarvis-Patrick clustering
 describe('jarpat', function () {
+    'use strict';
 
-    it('should return the expected clusters', function ()  {
+    it('should return the expected clusters', function () {
         clusters = jarpat.clusters(dataset, 2, 1);
         assert.deepEqual(expected, clusters);
     });
