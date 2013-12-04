@@ -27,8 +27,8 @@ describe('knn', function () {
     });
 
     it('should find 1 match', function () {
-        matches = mapper.map(dataset, [111, 113]);
-        assert.deepEqual(matches, [[111, 112, 113]]);
+        matches = mapper.map(dataset, [111, 115]);
+        assert.deepEqual(matches, [[111, 115, 113]]);
     });
 
     it('should find 2 matches', function () {
