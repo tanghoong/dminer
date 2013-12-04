@@ -10,7 +10,7 @@ assert = require('assert');
 knn = require('../lib/knn.js');
 
 // training process
-knn.addDocument(1, [11, 12, 13])
+knn.addDocument(1,  [11, 12, 13])
     .addDocument(1, [11, 12, 14])
     .addDocument(1, [11, 14, 15])
     .addDocument(2, [21, 22, 23])
@@ -35,7 +35,7 @@ describe('knn', function () {
     });
 
     it('should find 2 matches', function () {
-        labels = knn.classify([11, 21, 36], 5);
+        labels = knn.classify([12, 22, 36], 5);
         assert.deepEqual(labels, [1, 2]);
     });
 
