@@ -1,0 +1,30 @@
+{
+  "name": "data-mining",
+  "version": "0.0.0",
+  "description": "A minimal data mining module.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gaborsar/data-mining.git"
+  },
+  "keywords": [
+    "data",
+    "mining"
+  ],
+  "author": "Gabor Sar <gabor.sar@gmail.com> (http://github.com/gaborsar)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaborsar/data-mining/issues"
+  },
+  "homepage": "https://github.com/gaborsar/data-mining",
+  "devDependencies": {
+    "mocha": "*",
+    "jslint": "*"
+  }
+}
