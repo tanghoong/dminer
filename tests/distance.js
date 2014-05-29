@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require('assert'), 
+var assert = require('assert'),
   distance = require('../lib/distance');
 
 describe('distance', function () {
