@@ -1,0 +1,9 @@
+{
+  "node": true,
+  "unparam": true,
+  "indent": 2,
+  "predef": [
+    "describe",
+    "it"
+  ]
+}

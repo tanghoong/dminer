@@ -13,7 +13,7 @@ describe('jarpat', function () {
       [331, 332, 333], [331, 332, 334], [331, 335, 333],
       [441, 442, 443]
     ];
-    expected = [0, 0, 0, 3, 3, 3, 6, 6, 6, 9];
+    expected = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]];
     clusters = jarpat.clusters(dataset, 2, 1);
     assert.deepEqual(expected, clusters);
   });
