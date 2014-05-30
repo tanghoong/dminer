@@ -17,4 +17,12 @@ describe('distance', function () {
       assert.strictEqual(Infinity, distance.array([1, 2], [3, 4]));
     });
   });
+
+  describe('point2d', function () {
+    
+    it('should return distance', function () {
+      var expected = Math.sqrt(2 * 6 * 6) / 2;
+      assert.strictEqual(expected, distance.point2d([3, 3], [6, 6]));
+    });
+  });
 });
