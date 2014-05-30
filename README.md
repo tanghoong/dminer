@@ -1,11 +1,17 @@
-# data-mining
+# dminer
 
-Data mining in node.js.
+A minimal data mining module.
 
 ## Includes
 
  * Jarvis-Patrick clustering
  * KNN classification
+
+## Installation
+
+```Shell
+$ npm install dminer
+```
 
 ## Running unit tests, and JSLint validation
 
@@ -21,7 +27,7 @@ $ npm run lint
 ```JavaScript
 'use strict';
 
-var jarpat = require('data-mining').jarpat;
+var jarpat = require('dminer').jarpat;
 
 var dataset = [
   [111, 112, 113], [111, 112, 114], [111, 115, 113],
@@ -39,7 +45,7 @@ jarpat.clusters(dataset, 2, 1); // => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
 ```JavaScript
 'use strict';
 
-var Knn = require('data-mining').knn;
+var Knn = require('dminer').knn;
 
 var knn = new Knn();
 

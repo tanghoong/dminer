@@ -1,6 +1,6 @@
 {
-  "name": "data-mining",
-  "version": "0.0.0",
+  "name": "dminer",
+  "version": "0.0.1",
   "description": "A minimal data mining module.",
   "main": "index.js",
   "directories": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gaborsar/data-mining.git"
+    "url": "git://github.com/gaborsar/dminer.git"
   },
   "keywords": [
     "data",
@@ -21,9 +21,9 @@
   "author": "Gabor Sar <gabor.sar@gmail.com> (http://github.com/gaborsar)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaborsar/data-mining/issues"
+    "url": "https://github.com/gaborsar/dminer/issues"
   },
-  "homepage": "https://github.com/gaborsar/data-mining",
+  "homepage": "https://github.com/gaborsar/dminer",
   "devDependencies": {
     "mocha": "*",
     "jslint": "*"
