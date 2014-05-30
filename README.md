@@ -37,7 +37,6 @@ var dataset = [
 ];
 
 jarpat.clusters(dataset, 2, 1); // => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
-
 ```
 
 ### KNN classification
@@ -63,8 +62,8 @@ knn.classify([41, 42, 43], 5); // => []
 knn.classify([11, 12, 16], 5); // => [1]
 knn.classify([12, 22, 36], 5); // => [1, 2]
 knn.classify([11, 21, 31], 9); // => [1, 2, 3]
-
 ```
 
 ### License
+
 MIT
