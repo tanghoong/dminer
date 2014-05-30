@@ -1,8 +1,10 @@
 {
   "node": true,
+  "ass": true,
   "unparam": true,
   "indent": 2,
   "predef": [
+    "beforeEach",
     "describe",
     "it"
   ]
