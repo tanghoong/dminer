@@ -9,14 +9,14 @@ describe('knn', function () {
   beforeEach(function () {
     knn = new Knn();
     knn.addDocument(1, [11, 12, 13])
-      .addDocument(1, [11, 12, 14])
-      .addDocument(1, [11, 14, 15])
-      .addDocument(2, [21, 22, 23])
-      .addDocument(2, [21, 22, 24])
-      .addDocument(2, [21, 24, 25])
-      .addDocument(3, [31, 32, 33])
-      .addDocument(3, [31, 32, 34])
-      .addDocument(3, [31, 34, 35]);
+       .addDocument(1, [11, 12, 14])
+       .addDocument(1, [11, 14, 15])
+       .addDocument(2, [21, 22, 23])
+       .addDocument(2, [21, 22, 24])
+       .addDocument(2, [21, 24, 25])
+       .addDocument(3, [31, 32, 33])
+       .addDocument(3, [31, 32, 34])
+       .addDocument(3, [31, 34, 35]);
   });
 
   it('should find 0 matches', function () {
