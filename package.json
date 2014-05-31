@@ -1,6 +1,6 @@
 {
   "name": "dminer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A minimal data mining module.",
   "main": "index.js",
   "directories": {
