@@ -13,16 +13,28 @@ A minimal data mining module.
 $ npm install dminer
 ```
 
-## Running unit tests, and JSLint validation
+## Running Tests
 
+Install dev dependencies.
+```Shell
+$ npm install
+```
+
+Run tests.
 ```Shell
 $ npm test
+```
+
+Check code quality.
+```Shell
 $ npm run lint
 ```
 
 ## Examples
 
 ### Jarvis-Patrick clustering
+
+#### Array Distance (default)
 
 ```JavaScript
 'use strict';
@@ -37,6 +49,25 @@ var dataset = [
 ];
 
 jarpat.clusters(dataset, 2, 1); // => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
+```
+
+#### 2D Point Distance
+
+```JavaScript
+'use strict'
+
+var dminer = require('dminer'),
+  distance = dminer.distance,
+  jarpat = dminer.jarpat;
+
+var dataset = [
+  [0, 10], [0, 0], [10, 0],
+  [90, 0], [100, 0], [100, 10],
+  [100, 90], [100, 100], [90, 100],
+  [10, 100], [0, 100], [0, 90]
+];
+
+jarpat.clusters(dataset, 2, 1, distance.point2d); // => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11]]
 ```
 
 ### KNN classification
