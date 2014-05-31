@@ -48,7 +48,8 @@ var dataset = [
   [441, 442, 443]
 ];
 
-jarpat.clusters(dataset, 2, 1); // => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
+jarpat.clusters(dataset, 2, 1);
+// => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
 ```
 
 #### 2D Point Distance
@@ -60,14 +61,35 @@ var dminer = require('dminer'),
   distance = dminer.distance,
   jarpat = dminer.jarpat;
 
+// 3 triangles
 var dataset = [
-  [0, 10], [0, 0], [10, 0],
-  [90, 0], [100, 0], [100, 10],
-  [100, 90], [100, 100], [90, 100],
-  [10, 100], [0, 100], [0, 90]
+  [0, 0],     [10, 0],    [0, 10],
+  [100, 100], [110, 100], [100, 110],
+  [200, 200], [210, 200], [200, 210]
 ];
 
-jarpat.clusters(dataset, 2, 1, distance.point2d); // => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10, 11]]
+jarpat.clusters(dataset, 2, 1, distance.point2d);
+// => [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+```
+
+#### 3D Point Distance
+
+```JavaScript
+'use strict';
+
+var dminer = require('dminer'),
+  distance = dminer.distance,
+  jarpat = dminer.jarpat;
+
+// 3 tetrahedrons
+var dataset = [
+  [0, 0, 0],       [10, 0, 0],      [0, 10, 0],      [0, 0, 10],
+  [100, 100, 100], [110, 100, 100], [100, 110, 100], [100, 100, 110],
+  [200, 200, 200], [210, 200, 200], [200, 210, 200], [200, 200, 210]
+];
+
+jarpat.clusters(dataset, 2, 1, distance.point3d);
+// => [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]];
 ```
 
 ### KNN classification

@@ -27,7 +27,6 @@ describe('jarpat', function () {
 
     it('should return the expected clusters', function () {
       var dataset, expected, clusters;
-      // 9 points, represents 3 2d triangles
       dataset = [
         [0, 0],     [10, 0],    [0, 10],
         [100, 100], [110, 100], [100, 110],
@@ -43,7 +42,6 @@ describe('jarpat', function () {
 
     it('should return the expected clusters', function () {
       var dataset, expected, clusters;
-      // 12 points, represents 3 3d tetrahedron
       dataset = [
         [0, 0, 0],       [10, 0, 0],      [0, 10, 0],      [0, 0, 10],
         [100, 100, 100], [110, 100, 100], [100, 110, 100], [100, 100, 110],
