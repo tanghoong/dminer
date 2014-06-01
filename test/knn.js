@@ -84,7 +84,7 @@ describe('knn', function () {
          .addDocument(2, [200, 200, 200])
          .addDocument(2, [210, 200, 200])
          .addDocument(2, [200, 210, 200])
-         .addDocument(2, [200, 200, 210])
+         .addDocument(2, [200, 200, 210]);
     });
 
     it('should find 1 cluster', function () {
