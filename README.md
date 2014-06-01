@@ -52,7 +52,7 @@ distance.array([1, 2], [3, 4]);       // => Infinity
 ```JavaScript
 'use strict';
 
-var distance = require('distance').distance;
+var distance = require('dminer').distance;
 
 distance.point2d([3, 3], [3, 3]); // => 0
 distance.point2d([3, 3], [6, 6]); // => ~ 4.2426 (sqrt 18)
@@ -64,7 +64,7 @@ distance.point2d([6, 6], [3, 3]); // => ~ 4.2426 (sqrt 18)
 ```JavaScript
 'use strict';
 
-var distance = require('distance').distance;
+var distance = require('dminer').distance;
 
 distance.point3d([3, 3, 3], [3, 3, 3]); // => 0
 distance.point3d([3, 3, 3], [6, 6, 6]); // => ~ 5.1962 (sqrt 27)
