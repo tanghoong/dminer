@@ -21,26 +21,18 @@ describe('distance', function () {
   describe('point2d', function () {
 
     it('should return distance', function () {
-      var p1, p2, expected;
-      p1 = [3, 3];
-      p2 = [6, 6];
-      expected = Math.sqrt(2 * 6 * 6) / 2;
-      assert.strictEqual(0, distance.point2d(p1, p1));
-      assert.strictEqual(expected, distance.point2d(p1, p2));
-      assert.strictEqual(expected, distance.point2d(p2, p1));
+      assert.strictEqual(0, distance.point2d([3, 3], [3, 3]));
+      assert.strictEqual(Math.sqrt(18), distance.point2d([3, 3], [6, 6]));
+      assert.strictEqual(Math.sqrt(18), distance.point2d([6, 6], [3, 3]));
     });
   });
 
   describe('point3d', function () {
 
     it('should return distance', function () {
-      var p1, p2, expected;
-      p1 = [3, 3, 3];
-      p2 = [6, 6, 6];
-      expected = Math.sqrt(3 * 6 * 6) / 2;
-      assert.strictEqual(0, distance.point3d(p1, p1));
-      assert.strictEqual(expected, distance.point3d(p1, p2));
-      assert.strictEqual(expected, distance.point3d(p2, p1));
+      assert.strictEqual(0, distance.point3d([3, 3, 3], [3, 3, 3]));
+      assert.strictEqual(Math.sqrt(27), distance.point3d([3, 3, 3], [6, 6, 6]));
+      assert.strictEqual(Math.sqrt(27), distance.point3d([6, 6, 6], [3, 3, 3]));
     });
   });
 });

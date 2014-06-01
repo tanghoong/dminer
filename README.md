@@ -4,6 +4,7 @@ A minimal data mining module.
 
 ## Includes
 
+ * Distance metric functions
  * Jarvis-Patrick clustering
  * KNN classification
 

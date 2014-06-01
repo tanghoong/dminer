@@ -3,11 +3,8 @@
   "version": "0.0.5",
   "description": "A minimal data mining module.",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "mocha tests",
+    "test": "mocha",
     "lint": "jslint *.js **/*.js"
   },
   "homepage": "https://github.com/gaborsar/dminer",
