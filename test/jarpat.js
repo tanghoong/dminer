@@ -1,9 +1,8 @@
 'use strict';
 
 var assert = require('assert'),
-  dminer = require('..'),
-  distance = dminer.distance,
-  jarpat = dminer.jarpat;
+  distance = require('../lib/distance'),
+  jarpat = require('../lib/jarpat');
 
 describe('jarpat', function () {
 
