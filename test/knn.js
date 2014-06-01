@@ -23,19 +23,19 @@ describe('knn', function () {
     });
 
     it('should find 0 clusters', function () {
-      assert.deepEqual([], knn.classify([41, 42, 43], 5));
+      assert.deepEqual([], knn.classify([41, 42, 43], 3));
     });
 
     it('should find 1 cluster', function () {
-      assert.deepEqual([0], knn.classify([11, 12, 16], 5));
+      assert.deepEqual([0], knn.classify([11, 12, 16], 3));
     });
 
     it('should find 2 clusters', function () {
-      assert.deepEqual([0, 1], knn.classify([12, 22, 36], 5));
+      assert.deepEqual([0, 1], knn.classify([12, 22, 36], 3));
     });
 
     it('should find 3 clusters', function () {
-      assert.deepEqual([0, 1, 2], knn.classify([11, 21, 31], 9));
+      assert.deepEqual([0, 1, 2], knn.classify([11, 21, 31], 3));
     });
   });
 
@@ -45,26 +45,26 @@ describe('knn', function () {
     beforeEach(function () {
       knn = new Knn();
       knn.addDocument(0, [0, 0])
-         .addDocument(0, [10, 0])
-         .addDocument(0, [0, 10])
+         .addDocument(0, [10, 10])
+         .addDocument(0, [20, 20])
          .addDocument(1, [100, 100])
-         .addDocument(1, [110, 100])
-         .addDocument(1, [100, 110])
+         .addDocument(1, [110, 110])
+         .addDocument(1, [120, 120])
          .addDocument(2, [200, 200])
-         .addDocument(2, [210, 200])
-         .addDocument(2, [200, 210]);
+         .addDocument(2, [210, 210])
+         .addDocument(2, [220, 220]);
     });
 
     it('should find 1 cluster', function () {
-      assert.deepEqual([0], knn.classify([10, 10], 3, distance.point2d));
+      assert.deepEqual([0], knn.classify([30, 30], 3, distance.point2d));
     });
 
     it('should find 2 clusters', function () {
-      assert.deepEqual([0, 1], knn.classify([55, 55], 3, distance.point2d));
+      assert.deepEqual([0, 1], knn.classify([60, 60], 3, distance.point2d));
     });
 
     it('should find 3 clusters', function () {
-      assert.deepEqual([1, 0, 2], knn.classify([100, 100], 9, distance.point2d));
+      assert.deepEqual([1, 0, 2], knn.classify([110, 110], 9, distance.point2d));
     });
   });
 
@@ -74,29 +74,29 @@ describe('knn', function () {
     beforeEach(function () {
       knn = new Knn();
       knn.addDocument(0, [0, 0, 0])
-         .addDocument(0, [10, 0, 0])
-         .addDocument(0, [0, 10, 0])
-         .addDocument(0, [0, 0, 10])
+         .addDocument(0, [10, 10, 10])
+         .addDocument(0, [20, 20, 20])
+         .addDocument(0, [30, 30, 30])
          .addDocument(1, [100, 100, 100])
-         .addDocument(1, [110, 100, 100])
-         .addDocument(1, [100, 110, 100])
-         .addDocument(1, [100, 100, 110])
+         .addDocument(1, [110, 110, 110])
+         .addDocument(1, [120, 120, 120])
+         .addDocument(1, [130, 130, 130])
          .addDocument(2, [200, 200, 200])
-         .addDocument(2, [210, 200, 200])
-         .addDocument(2, [200, 210, 200])
-         .addDocument(2, [200, 200, 210]);
+         .addDocument(2, [210, 210, 210])
+         .addDocument(2, [220, 220, 220])
+         .addDocument(2, [230, 230, 230]);
     });
 
     it('should find 1 cluster', function () {
-      assert.deepEqual([0], knn.classify([10, 10, 10], 4, distance.point3d));
+      assert.deepEqual([0], knn.classify([40, 40, 40], 4, distance.point3d));
     });
 
     it('should find 2 clusters', function () {
-      assert.deepEqual([0, 1], knn.classify([55, 55, 55], 5, distance.point3d));
+      assert.deepEqual([0, 1], knn.classify([65, 65, 65], 4, distance.point3d));
     });
 
     it('should find 3 clusters', function () {
-      assert.deepEqual([1, 0, 2], knn.classify([100, 100, 100], 12, distance.point3d));
+      assert.deepEqual([1, 0, 2], knn.classify([110, 110, 110], 12, distance.point3d));
     });
   });
 });
