@@ -114,6 +114,8 @@ jarpat.clusters(dataset, 2, 1, distance.point2d);
 
 ### KNN classification
 
+#### Default (Array) Distance
+
 ```JavaScript
 'use strict';
 
@@ -121,20 +123,46 @@ var Knn = require('dminer').knn;
 
 var knn = new Knn();
 
-knn.addDocument(1, [11, 12, 13])
-   .addDocument(1, [11, 12, 14])
-   .addDocument(1, [11, 14, 15])
-   .addDocument(2, [21, 22, 23])
-   .addDocument(2, [21, 22, 24])
-   .addDocument(2, [21, 24, 25])
-   .addDocument(3, [31, 32, 33])
-   .addDocument(3, [31, 32, 34])
-   .addDocument(3, [31, 34, 35]);
+knn.addDocument(0, [11, 12, 13])
+   .addDocument(0, [11, 12, 14])
+   .addDocument(0, [11, 14, 15])
+   .addDocument(1, [21, 22, 23])
+   .addDocument(1, [21, 22, 24])
+   .addDocument(1, [21, 24, 25])
+   .addDocument(2, [31, 32, 33])
+   .addDocument(2, [31, 32, 34])
+   .addDocument(2, [31, 34, 35]);
 
 knn.classify([41, 42, 43], 5); // => []
-knn.classify([11, 12, 16], 5); // => [1]
-knn.classify([12, 22, 36], 5); // => [1, 2]
-knn.classify([11, 21, 31], 9); // => [1, 2, 3]
+knn.classify([11, 12, 16], 5); // => [0]
+knn.classify([12, 22, 36], 5); // => [0, 1]
+knn.classify([11, 21, 31], 9); // => [0, 1, 2]
+```
+
+#### Custom (2D Point) Distance
+
+```JavaScript
+'use strict';
+
+var dminer = require('dminer'),
+  distance = dminer.distance,
+  Knn = dminer.knn;
+
+var knn = new Knn();
+
+knn.addDocument(0, [0, 0])
+   .addDocument(0, [10, 10])
+   .addDocument(0, [20, 20])
+   .addDocument(1, [100, 100])
+   .addDocument(1, [110, 110])
+   .addDocument(1, [120, 120])
+   .addDocument(2, [200, 200])
+   .addDocument(2, [210, 210])
+   .addDocument(2, [220, 220]);
+
+knn.classify([30, 30], 3, distance.point2d);   // => [0]
+knn.classify([60, 60], 3, distance.point2d);   // => [0, 1]
+knn.classify([110, 110], 9, distance.point2d); // => [0, 1, 2]
 ```
 
 ### License
