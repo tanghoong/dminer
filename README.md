@@ -101,7 +101,6 @@ var dminer = require('dminer'),
   distance = dminer.distance,
   jarpat = dminer.jarpat;
 
-// 3 triangles
 var dataset = [
   [0, 0], [10, 0], [0, 10],
   [100, 100], [110, 100], [100, 110],
